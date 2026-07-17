@@ -1,1 +1,168 @@
-body{font-family:system-ui,sans-serif;max-width:1000px;margin:auto;padding:2rem;line-height:1.6;background:#0d1117;color:#e6edf3}
+:root {
+  color-scheme: dark;
+  --background: #0b1114;
+  --panel: #121b20;
+  --text: #edf3f5;
+  --muted: #a9b7bd;
+  --line: #2b3940;
+  --accent: #9fb8ad;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.55;
+}
+
+.site-header,
+main,
+footer {
+  width: min(1180px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.site-header {
+  padding: 64px 0 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow,
+.map-number {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+h1,
+h2 {
+  margin: 0;
+  line-height: 1.12;
+}
+
+h1 {
+  max-width: 800px;
+  font-size: clamp(2rem, 5vw, 4.4rem);
+  font-weight: 650;
+}
+
+h2 {
+  font-size: clamp(1.45rem, 3vw, 2.3rem);
+}
+
+.intro,
+.section-heading p,
+.caption,
+footer {
+  color: var(--muted);
+}
+
+.intro {
+  max-width: 650px;
+  margin: 18px 0 0;
+  font-size: 1.1rem;
+}
+
+main {
+  padding: 48px 0 24px;
+}
+
+.map-section {
+  padding: 28px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 22px;
+}
+
+.section-heading p:not(.map-number) {
+  margin: 10px 0 0;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  color: var(--text);
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.button:hover,
+.button:focus-visible {
+  background: var(--accent);
+  color: #0b1114;
+}
+
+.pdf-frame {
+  overflow: hidden;
+  height: min(78vh, 820px);
+  min-height: 520px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.pdf-frame object {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.pdf-frame p {
+  padding: 24px;
+  color: #111;
+}
+
+.caption {
+  margin: 14px 0 0;
+  font-size: 0.9rem;
+}
+
+footer {
+  padding: 24px 0 48px;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    padding-top: 40px;
+  }
+
+  .map-section {
+    padding: 18px;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .button {
+    width: 100%;
+    margin-top: 18px;
+  }
+
+  .pdf-frame {
+    height: 68vh;
+    min-height: 430px;
+  }
+}
